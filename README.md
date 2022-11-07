@@ -37,8 +37,8 @@
 # Checklist
 
 - [x] Seção1. Introdução
-- [ ] Seção2. Conceitos básicos de PHP
-- [ ] Seção3. Tipos de dados
+- [x] Seção2. Conceitos básicos de PHP
+- [x] Seção3. Tipos de dados
 - [ ] Seção4. Variáveis
 - [ ] Seção5. Expressões e Operadores
 - [ ] Seção6. Estruturas de Controle
