@@ -40,7 +40,7 @@
 - [x] Seção2. Conceitos básicos de PHP
 - [x] Seção3. Tipos de dados
 - [x] Seção4. Variáveis
-- [ ] Seção5. Expressões e Operadores
+- [x] Seção5. Expressões e Operadores
 - [ ] Seção6. Estruturas de Controle
 - [ ] Seção7. Estruturas de repetição
 - [ ] Seção8. Inclusão de código
