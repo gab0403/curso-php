@@ -44,7 +44,7 @@
 - [x] Seção6. Estruturas de Controle
 - [x] Seção7. Estruturas de repetição
 - [x] Seção8. Inclusão de código
-- [ ] Seção9. Funções
+- [x] Seção9. Funções
 - [ ] Seção10. Avançando em Strings
 - [ ] Seção11. Avançando em Arrays
 - [ ] Seção12. Introdução a Orientação a Objetos
