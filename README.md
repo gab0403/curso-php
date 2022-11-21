@@ -46,7 +46,7 @@
 - [x] Seção8. Inclusão de código
 - [x] Seção9. Funções
 - [x] Seção10. Avançando em Strings
-- [ ] Seção11. Avançando em Arrays
+- [x] Seção11. Avançando em Arrays
 - [ ] Seção12. Introdução a Orientação a Objetos
 - [ ] Seção13. Trabalhando com datas
 - [ ] Seção14. PHP e a web
