@@ -48,7 +48,7 @@
 - [x] Seção10. Avançando em Strings
 - [x] Seção11. Avançando em Arrays
 - [x] Seção12. Introdução a Orientação a Objetos
-- [ ] Seção13. Trabalhando com datas
+- [x] Seção13. Trabalhando com datas
 - [ ] Seção14. PHP e a web
 - [ ] Seção15. Projeto 1: Blog
 - [ ] Seção16. PHP e Banco de dados (MySQL)
