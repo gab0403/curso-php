@@ -47,7 +47,7 @@
 - [x] Seção9. Funções
 - [x] Seção10. Avançando em Strings
 - [x] Seção11. Avançando em Arrays
-- [ ] Seção12. Introdução a Orientação a Objetos
+- [x] Seção12. Introdução a Orientação a Objetos
 - [ ] Seção13. Trabalhando com datas
 - [ ] Seção14. PHP e a web
 - [ ] Seção15. Projeto 1: Blog
