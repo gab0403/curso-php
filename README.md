@@ -50,8 +50,8 @@
 - [x] Seção12. Introdução a Orientação a Objetos
 - [x] Seção13. Trabalhando com datas
 - [x] Seção14. PHP e a web
-- [ ] Seção15. Projeto 1: Blog
-- [ ] Seção16. PHP e Banco de dados (MySQL)
+- [x] Seção15. Projeto 1: Blog
+- [x] Seção16. PHP e Banco de dados (MySQL)
 - [ ] Seção17. Projeto 2: Agenda
 - [ ] Seção18. Design patterns e padrões de desenvolvimento
 - [ ] Seção19. Projeto 3: MovieStar (POO)
