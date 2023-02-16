@@ -92,7 +92,7 @@
       $id = $_GET["id"];
     }
     
-    // Retorna dado de um post específico
+    // Retorna dado de um contato específico
     if(!empty($id)) {
 
       $query = "SELECT * FROM contacts WHERE id = :id";
