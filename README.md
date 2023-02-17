@@ -53,7 +53,7 @@
 - [x] Seção15. Projeto 1: Blog
 - [x] Seção16. PHP e Banco de dados (MySQL)
 - [x] Seção17. Projeto 2: Agenda
-- [ ] Seção18. Design patterns e padrões de desenvolvimento
+- [x] Seção18. Design patterns e padrões de desenvolvimento
 - [ ] Seção19. Projeto 3: MovieStar (POO)
 - [ ] Seção20. EXTRA Aprenda HTML
 - [ ] Seção21. EXTRA Aprenda CSS
