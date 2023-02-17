@@ -3,7 +3,7 @@
     require_once("db.php");
     require_once("models/User.php");
     require_once("models/Message.php");
-    require_once("dao/UserDAO.php");
+    require_once("dao/userDAO.php");
 
     $message = new Message($BASE_URL);
 
