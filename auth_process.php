@@ -6,6 +6,7 @@
     require_once("dao/userDAO.php");
 
     $message = new Message($BASE_URL);
+    $userDAO = new UserDAO($conn, $BASE_URL);
 
     //Resgata o tipo do formulário
     $type = filter_input(INPUT_POST, "type");
@@ -20,7 +21,23 @@
         $confirmpassword = filter_input(INPUT_POST, "confirmpassword");
 
         if ($name && $lastname && $email && $password) {
-            
+            if ($password === $confirmpassword) {
+
+                if ($userDAO->findByEmail($email) === false) {
+
+                    echo "Nenhum usuário foi encontrado!";
+                    
+                } else {
+
+                $message->setMessage("Usuário já cadastrado, tente outro email.", "error", "back");
+
+                }
+
+            } else {
+
+                $message->setMessage("As senhas não são iguais.", "error", "back");
+
+            }
         } else {
             $message->setMessage("Por favor, preencha todos os campos.", "error", "back");
         }
