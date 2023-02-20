@@ -25,7 +25,18 @@
 
                 if ($userDAO->findByEmail($email) === false) {
 
-                    echo "Nenhum usuário foi encontrado!";
+                    $userToken = $user->generateToken();
+                    $finalPassword = $user->generatePassword($password);
+                
+                    $user->name = $name;
+                    $user->lastname = $lastname;
+                    $user->email = $email;
+                    $user->password = $finalPassword;
+                    $user->token = $token;
+
+                    $auth = true;
+
+                    $userDAO->create($user, $auth);
                     
                 } else {
 
