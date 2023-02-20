@@ -74,10 +74,16 @@
 
     if($userDao->authenticateUser($email, $password)) {
 
-      
+      $message->setMessage("Seja bem-vindo!", "success", "back");
+
+
     } else {
+
       $message->setMessage("Usuário e/ou senha incorretos..", "error", "back");
     }
+
   } else {
+
     $message->setMessage("Informações inválidas.", "error", "index.php");
+
   }
