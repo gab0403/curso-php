@@ -65,15 +65,15 @@ class UserDAO implements UserDAOInterface {
             if ($user) {
                 return $user;
 
-            } else {
+            } else if($protected) {
 
                 $this->message->setMessage("Faça a autenticação para acessar essa página.", "error", "index.php");
                 
             }
+        } else if($protected) {
 
-        } else {
-
-            return false;
+            $this->message->setMessage("Faça a autenticação para acessar essa página.", "error", "index.php");
+            
         }
     }
 
@@ -81,7 +81,7 @@ class UserDAO implements UserDAOInterface {
         $_SESSION["token"] = $token;
 
         if($redirect) {
-            $this->message->setMessage("Seja bem-vindo!", "sucess", "editprofile.php");
+            $this->message->setMessage("Seja bem-vindo!", "success", "editprofile.php");
         }
     }
 
@@ -135,7 +135,15 @@ class UserDAO implements UserDAOInterface {
         }
     }
 
+    public function destroyToken() {
+        $_SESSION["token"] = "";
+
+        $this->message->setMessage("Você saiu com sucesso.", "success", "index.php");
+    }
+
     public function changePassword(User $user){
 
     }
+
+
 }
