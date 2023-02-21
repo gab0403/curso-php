@@ -54,8 +54,5 @@
 - [x] Seção16. PHP e Banco de dados (MySQL)
 - [x] Seção17. Projeto 2: Agenda
 - [x] Seção18. Design patterns e padrões de desenvolvimento
-- [ ] Seção19. Projeto 3: MovieStar (POO)
-- [ ] Seção20. EXTRA Aprenda HTML
-- [ ] Seção21. EXTRA Aprenda CSS
-- [ ] Seção22. EXTRA Projeto com HTML e CSS
-- [ ] Seção23. Fechamento e próximos passos 
+- [x] Seção19. Projeto 3: MovieStar (POO)
+
