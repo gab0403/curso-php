@@ -72,7 +72,6 @@
           $reviewObject = $this->buildReview($review);
 
           // Chamar dados do usuário
-          
           $user = $userDao->findById($reviewObject->users_id);
 
           $reviewObject->user = $user;
