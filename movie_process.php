@@ -9,6 +9,8 @@ require_once("dao/MovieDAO.php");
 
 $message = new Message($BASE_URL);
 $userDao = new UserDAO($conn, $BASE_URL);
+$movieDao = new MovieDAO($conn, $BASE_URL);
+
 
 // Resgata o tipo do formulário
 $type = filter_input(INPUT_POST, "type");
@@ -35,8 +37,9 @@ $userData = $userDao->verifyToken();
         $movie->trailer = $trailer;
         $movie->category = $category;
         $movie->length = $length;
+        $movie->users_id = $userData->id;
 
-        // Upload da imagem
+    // Upload da imagem
     if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
       
         $image = $_FILES["image"];
