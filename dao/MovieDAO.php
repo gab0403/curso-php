@@ -1,21 +1,22 @@
 <?php
 
-require_once("models/Movie.php");
-require_once("models/Message.php");
+  require_once("models/Movie.php");
+  require_once("models/Message.php");
 
 
-class MovieDAO implements MovieDAOInterface {
+  class MovieDAO implements MovieDAOInterface {
+
     private $conn;
     private $url;
     private $message;
 
     public function __construct(PDO $conn, $url) {
-        $this->conn = $conn;
-        $this->url = $url;
-        $this->message = new Message($url);
+      $this->conn = $conn;
+      $this->url = $url;
+      $this->message = new Message($url);
     }
 
-    public function buildMovie($data){
+    public function buildMovie($data) {
 
       $movie = new Movie();
 
@@ -29,33 +30,77 @@ class MovieDAO implements MovieDAOInterface {
       $movie->users_id = $data["users_id"];
 
       return $movie;
-    }
-
-    public function findAll(){
 
     }
 
-    public function getLatestMovies(){
+    public function findAll() {
 
     }
 
-    public function getMoviesByCategory($category){
+    public function getLatestMovies() {
+
+      $movies = [];
+
+      $stmt = $this->conn->query("SELECT * FROM movies ORDER BY id DESC");
+
+      $stmt->execute();
+
+      if($stmt->rowCount() > 0) {
+
+        $moviesArray = $stmt->fetchAll();
+
+        foreach($moviesArray as $movie) {
+          $movies[] = $this->buildMovie($movie);
+        }
+
+      }
+
+      return $movies;
 
     }
 
-    public function getMoviesByUserId($id){
+    public function getMoviesByCategory($category) {
+
+      $movies = [];
+
+      $stmt = $this->conn->prepare("SELECT * FROM movies
+                                    WHERE category = :category
+                                    ORDER BY id DESC");
+
+      $stmt->bindParam(":category", $category);
+
+      $stmt->execute();
+
+      if($stmt->rowCount() > 0) {
+
+        $moviesArray = $stmt->fetchAll();
+
+        foreach($moviesArray as $movie) {
+          $movies[] = $this->buildMovie($movie);
+        }
+
+      }
+
+      return $movies;
 
     }
 
-    public function findById($id){
+    public function getMoviesByUserId($id) {
+
+    
+    }
+
+    public function findById($id) {
+
 
     }
 
-    public function findByTitle($title){
+    public function findByTitle($title) {
 
+  
     }
 
-    public function create(Movie $movie){
+    public function create(Movie $movie) {
 
       $stmt = $this->conn->prepare("INSERT INTO movies (
         title, description, image, trailer, category, length, users_id
@@ -73,18 +118,16 @@ class MovieDAO implements MovieDAOInterface {
 
       $stmt->execute();
 
-
-      $this->message->setMessage("Filme atualizado com sucesso!", "success", "index.php");
-
-    }
-
-    public function update(Movie $movie){
+      // Mensagem de sucesso por adicionar filme
+      $this->message->setMessage("Filme adicionado com sucesso!", "success", "index.php");
 
     }
 
-    public function destroy($id){
+    public function update(Movie $movie) {
 
     }
 
+    public function destroy($id) {
 
+  }
 }
