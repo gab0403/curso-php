@@ -4,7 +4,7 @@
   require_once("models/Message.php");
 
   // Review DAO
-  // require_once("dao/ReviewDAO.php");
+  require_once("dao/ReviewDAO.php");
 
   class MovieDAO implements MovieDAOInterface {
 
@@ -32,11 +32,11 @@
       $movie->users_id = $data["users_id"];
 
       // Recebe as ratings do filme
-      // $reviewDao = new ReviewDao($this->conn, $this->url);
+      $reviewDao = new ReviewDao($this->conn, $this->url);
 
-      // $rating = $reviewDao->getRatings($movie->id);
+      $rating = $reviewDao->getRatings($movie->id);
 
-      // $movie->rating = $rating;
+      $movie->rating = $rating;
 
       return $movie;
 

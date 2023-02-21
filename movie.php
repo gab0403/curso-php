@@ -4,7 +4,7 @@
   // Verifica se usuário está autenticado
   require_once("models/Movie.php");
   require_once("dao/MovieDAO.php");
-//   require_once("dao/ReviewDAO.php");
+  require_once("dao/ReviewDAO.php");
 
   // Pegar o id do filme
   $id = filter_input(INPUT_GET, "id");
@@ -13,7 +13,7 @@
 
   $movieDao = new MovieDAO($conn, $BASE_URL);
 
-//   $reviewDao = new ReviewDAO($conn, $BASE_URL);
+  $reviewDao = new ReviewDAO($conn, $BASE_URL);
 
   if(empty($id)) {
 
@@ -47,12 +47,12 @@
     }
 
     // Resgatar as revies do filme
-    // $alreadyReviewed = $reviewDao->hasAlreadyReviewed($id, $userData->id);
+    $alreadyReviewed = $reviewDao->hasAlreadyReviewed($id, $userData->id);
  
   }
 
   // Resgatar as reviews do filme
-//   $movieReviews = $reviewDao->getMoviesReview($movie->id);
+  $movieReviews = $reviewDao->getMoviesReview($movie->id);
 
 ?>
 <div id="main-container" class="container-fluid">
@@ -107,12 +107,12 @@
       </div>
       <?php endif; ?>
       <!-- Comentários -->
-      <!-- <?php foreach($movieReviews as $review): ?>
+      <?php foreach($movieReviews as $review): ?>
         <?php require("templates/user_review.php"); ?>
       <?php endforeach; ?>
       <?php if(count($movieReviews) == 0): ?>
         <p class="empty-list">Não há comentários para este filme ainda...</p>
-      <?php endif; ?> -->
+      <?php endif; ?>
     </div>
   </div>
 </div>
